@@ -1,7 +1,11 @@
 import React from "react";
 
 const BookCard = () => {
-  return <div>BookCard</div>;
+  return (
+    <div>
+      <div></div>
+    </div>
+  );
 };
 
 export default BookCard;

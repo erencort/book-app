@@ -13,14 +13,17 @@ const initialState: BookState = {
   error: "",
 };
 
-const fetchBooks = createAsyncThunk("fetchBooks", async () => {
-  const res = await axios.get<Book>(
-    `https://www.googleapis.com/books/v1/volumes?q=+inauthor:keyes&key=${
-      import.meta.env.VITE_REACT_APP_API_KEY
-    }`
-  );
-  return res.data;
-});
+export const fetchBooks = createAsyncThunk(
+  "fetchBooks",
+  async (data: string) => {
+    const res = await axios.get<Book>(
+      `https://www.googleapis.com/books/v1/volumes?q=${data}+inauthor:keyes&key=${
+        import.meta.env.VITE_REACT_APP_API_KEY
+      }`
+    );
+    return res.data;
+  }
+);
 
 const bookSlice = createSlice({
   name: "book",
