@@ -17,8 +17,8 @@ const Header = () => {
     setQuery("");
   };
   return (
-    <div className="h-1/4 text-center pt-10">
-      <div>Book Search</div>
+    <div className=" text-center py-10 ">
+      <div className="text-4xl mb-5">Book Search</div>
       <div>
         <input
           onChange={(e) => setQuery(e.target.value)}

@@ -6,7 +6,7 @@ import { fetchBooks } from "./redux/bookSlice";
 
 function App() {
   return (
-    <div className=" h-screen text-white from-gray-700 to-gray-950 bg-gradient-to-t">
+    <div className=" min-h-full text-white from-gray-700 to-gray-950 bg-gradient-to-t">
       <Header />
       <BookSection />
     </div>
