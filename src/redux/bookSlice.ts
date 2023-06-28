@@ -13,14 +13,16 @@ const initialState: BookState = {
   error: "",
 };
 
+const maxResult = 40;
 export const fetchBooks = createAsyncThunk(
   "fetchBooks",
   async (data: string) => {
     const res = await axios.get<Book>(
-      `https://www.googleapis.com/books/v1/volumes?q=${data}+inauthor:keyes&key=${
+      `https://www.googleapis.com/books/v1/volumes?q=a&key=${
         import.meta.env.VITE_REACT_APP_API_KEY
-      }`
+      }&maxResults=${maxResult}`
     );
+
     return res.data;
   }
 );
@@ -30,7 +32,7 @@ const bookSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchBooks.pending, (state, action) => {
+    builder.addCase(fetchBooks.pending, (state) => {
       state.loading = true;
       state.error = "";
     });
@@ -42,7 +44,7 @@ const bookSlice = createSlice({
         state.error = "";
       }
     );
-    builder.addCase(fetchBooks.rejected, (state, action) => {
+    builder.addCase(fetchBooks.rejected, (state) => {
       state.loading = false;
       state.error = "Error fetching";
     });
