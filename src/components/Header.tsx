@@ -8,7 +8,7 @@ const Header = () => {
   const [query, setQuery] = useState<string>("");
 
   useEffect(() => {
-    dispatch(fetchBooks(""));
+    dispatch(fetchBooks("a"));
     console.log(books);
   }, [dispatch]);
 
