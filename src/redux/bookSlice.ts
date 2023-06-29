@@ -18,7 +18,7 @@ export const fetchBooks = createAsyncThunk(
   "fetchBooks",
   async (data: string) => {
     const res = await axios.get<Book>(
-      `https://www.googleapis.com/books/v1/volumes?q=a&key=${
+      `https://www.googleapis.com/books/v1/volumes?q=${data}&key=${
         import.meta.env.VITE_REACT_APP_API_KEY
       }&maxResults=${maxResult}`
     );

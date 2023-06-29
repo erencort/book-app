@@ -1,5 +1,4 @@
 import React from "react";
-import { useAppDispatch } from "../redux/store";
 import { Link } from "react-router-dom";
 
 interface IProps {
@@ -11,7 +10,6 @@ interface IProps {
 
 const BookCard: React.FC<IProps> = ({ title, img, author, id }) => {
   const slicedAuthors = author && author.slice(0, 3);
-  const dispatch = useAppDispatch();
 
   return (
     <div

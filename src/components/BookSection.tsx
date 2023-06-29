@@ -1,11 +1,8 @@
-import React from "react";
-import { useAppDispatch, useAppSelector } from "../redux/store";
+import { useAppSelector } from "../redux/store";
 import BookCard from "./BookCard";
-import { fetchBooks } from "../redux/bookSlice";
 
 const BookSection = () => {
   const books = useAppSelector((state) => state.book.data?.items);
-  const dispatch = useAppDispatch();
 
   return (
     <div className="py-3 mx-auto container grid grid-cols-4 gap-4 text-center">

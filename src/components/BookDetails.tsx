@@ -1,6 +1,5 @@
-import React from "react";
 import { useAppSelector } from "../redux/store";
-import { useParams, redirect, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const BookDetails = () => {
   let { id } = useParams();
