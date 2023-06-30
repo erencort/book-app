@@ -36,7 +36,9 @@ const BookCard: React.FC<IProps> = ({ title, img, author, id }) => {
       </div>
       <div>
         <Link to={`/details/${id}`}>
-          <button className="border-white border-2 mt-4">Details</button>
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full my-5">
+            Details
+          </button>
         </Link>
       </div>
     </div>
